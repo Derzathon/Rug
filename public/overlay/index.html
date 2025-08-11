@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RUG Overlay</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./toasts.css">
+  <style>
+    html, body { height: 100%; margin: 0; background: transparent; }
+  </style>
+</head>
+<body>
+  <!-- Fullscreen stage the script manipulates -->
+  <div id="stage">
+    <!-- Black screen used during milestone transition -->
+    <div id="blackout"></div>
+
+    <!-- Container for buy/milestone animation videos -->
+    <div id="animLayer"></div>
+
+    <!-- Idle loop video (shown when no buy/milestone is playing) -->
+    <video id="anim" muted playsinline loop autoplay></video>
+
+    <div id="buyLegend">
+      .1SOL = Little Jig &nbsp;&nbsp; | &nbsp;&nbsp;
+      .5SOL = Cha Cha &nbsp;&nbsp; | &nbsp;&nbsp;
+      1SOL = Disco Fingers &nbsp;&nbsp; | &nbsp;&nbsp;
+      5SOL = Jump Around &nbsp;&nbsp; | &nbsp;&nbsp;
+      10SOL = Backflip
+    </div>
+
+    <!-- Market cap label -->
+    <div id="mcTicker"></div>
+
+    <!-- Milestone banner text -->
+    <div id="milestoneBanner"></div>
+
+    <!-- Optional debug text -->
+    <div id="debugBox"></div>
+
+    <!-- Toasts (buy thank-you popups) -->
+    <div id="toasts"></div>
+  </div>
+
+  <!-- Optional config (safe to keep) -->
+  <script src="./config.js"></script>
+  <!-- Main overlay logic -->
+  <script src="./overlay.js"></script>
+  <!-- Thank-you popups (>= 0.1 SOL, ~1s) -->
+  <script src="./buy-toast.js"></script>
+</body>
+</html>
